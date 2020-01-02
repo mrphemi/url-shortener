@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import copy from "copy-to-clipboard";
 
 import styles from "../../scss/components/Links.module.scss";
-import { setTimeout } from "timers";
 
 const Link = ({ link }) => {
   const [copied, setCopied] = useState(false);
+  // Copy shortened url to clipboard
   const copyToClipboard = text => {
     copy(text);
     setCopied(true);
+    // Reversed copied state to false after 5seconds
     setTimeout(() => {
       setCopied(false);
     }, 5000);
