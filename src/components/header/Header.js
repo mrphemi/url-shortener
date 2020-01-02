@@ -1,7 +1,5 @@
 import React from "react";
 
-import { headerIllustration } from "../../assets/images";
-
 import styles from "../../scss/components/Header.module.scss";
 
 const Header = () => (

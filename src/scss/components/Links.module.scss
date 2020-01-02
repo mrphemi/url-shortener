@@ -7,7 +7,11 @@
   .link {
     border-radius: 1rem;
     background-color: #fff;
-    padding: 2rem;
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
     @media screen and (min-width: 1024px){
       display: flex;
@@ -39,7 +43,7 @@
 
   .original {
     color: hsl(255, 11%, 22%);
-    padding: 1.5rem;
+    padding: 1.5rem ;
     border-bottom: 1px solid hsl(0, 0%, 75%);
     @media screen and (min-width: 1024px){
       border-bottom: none;
@@ -50,8 +54,14 @@
   button {
     @include btn-blue(0.5rem);
     padding: 0.5rem;
+    &.copied {
+      background-color: hsl(257, 27%, 26%);
+    }
     @media screen and (min-width: 1024px){
       padding: 1rem 2rem;   
+    }
+    @media screen and (min-width: 1200px){
+      padding: 1rem 3rem;   
     }
   }
 

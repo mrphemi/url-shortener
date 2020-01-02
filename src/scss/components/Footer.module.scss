@@ -1,6 +1,35 @@
 footer {
   padding:  5rem 0;
   background-color: hsl(260, 8%, 14%);
+  text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    text-align: left;
+  }
+
+  .wrapper {
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .links {
+    @media screen and (min-width: 1024px) {
+      display: flex;
+     div {
+       margin-right: 5rem;
+       @media screen and (min-width: 1200px) {
+        margin-right: 7rem;
+       }
+        &:last-of-type {
+          margin-right: 0;
+        }
+     }
+    }
+  }
+
+
   .logo {
     margin-bottom: 5rem;
   }
@@ -23,6 +52,9 @@ footer {
       font-size: 1.6rem;
       font-weight: 500;
       margin-bottom: 1rem;
+      &:hover {
+        color:hsl(180, 66%, 49%);
+      }
       @media screen and (max-width: 360px){
         font-size: 1.4rem;
       }
@@ -34,10 +66,20 @@ footer {
   }
 
 
-  .icon {
-    margin-right: 2rem;
-    &:last-of-type {
-      margin-right: 0;
+  .social {
+
+    a {
+      margin-right: 2rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
+
+    .icon {
+      &:hover {
+        color:hsl(180, 66%, 49%);
+      }
+    }
+
   }
 }

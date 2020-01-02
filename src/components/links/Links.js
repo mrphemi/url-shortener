@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 
 import Link from "./Link";
 
 import styles from "../../scss/components/Links.module.scss";
 
-const Links = () => {
+const Links = ({ links }) => {
+  useEffect(() => {
+    return;
+  }, [links]);
+
   return (
     <div className={styles.my_links}>
-      <Link />
+      {links && links.map((link, i) => <Link key={i} link={link} />)}
     </div>
   );
+};
+
+Links.propTypes = {
+  links: PropTypes.array
 };
 
 export default Links;

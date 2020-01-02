@@ -109,6 +109,9 @@ nav {
         color:hsl(257, 7%, 63%);
         margin-right: 2rem;
         margin-bottom: 0;
+        &:hover {
+          color: hsl(255, 11%, 22%);
+        }
       }
 
       &:last-of-type {

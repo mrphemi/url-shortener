@@ -6,10 +6,18 @@ import styles from "../../scss/components/Footer.module.scss";
 
 const Social = () => (
   <div className={styles.social}>
-    <Facebook className={styles.icon} />
-    <Twitter className={styles.icon} />
-    <Pinterest className={styles.icon} />
-    <Instagram className={styles.icon} />
+    <a href="#">
+      <Facebook className={styles.icon} />
+    </a>
+    <a href="#">
+      <Twitter className={styles.icon} />
+    </a>
+    <a href="#">
+      <Pinterest className={styles.icon} />
+    </a>
+    <a href="#">
+      <Instagram className={styles.icon} />
+    </a>
   </div>
 );
 
