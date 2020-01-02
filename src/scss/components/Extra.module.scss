@@ -1,0 +1,37 @@
+@import "../../scss/mixins.scss";
+
+
+.extra {
+  background-color: hsl(257, 27%, 26%);
+  background-image: url("https://res.cloudinary.com/mrphemi/image/upload/v1577817229/bg-boost-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    background-image: url("https://res.cloudinary.com/mrphemi/image/upload/v1577817229/bg-boost-desktop.svg");
+    background-size: cover;
+    background-position: top center;
+    height: 20vh;
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 30vh;
+  }
+
+  h2 {
+    color: #fff;
+  }
+
+  button {
+    @include btn-blue(2.3rem, 50%);
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  
+}

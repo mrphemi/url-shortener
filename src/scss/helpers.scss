@@ -1,0 +1,18 @@
+// Helper classes
+
+.container, .container_dark {
+  padding: 0 5%;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 10%;
+  }
+
+}
+
+.container_dark {
+  background-color: #f0f1f6;
+}
+
+.text-center {
+  text-align: center;
+}

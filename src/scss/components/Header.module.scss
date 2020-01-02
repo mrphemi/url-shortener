@@ -1,0 +1,66 @@
+@import "../../scss/mixins.scss";
+
+.header {
+  margin-top: 2rem;
+  overflow: hidden;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 6rem;
+  }
+
+  .header_intro {
+    padding-left: 5%;
+    @media screen and (min-width: 768px) {
+      padding-left: 10%;
+    }
+    @media screen and (min-width: 1024px) {
+      flex-basis: 45%;
+      align-self: center;
+    }
+  }
+
+  .header_illustration {
+    flex-basis: 55%;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    position: relative;
+    left: 20%;
+    margin-bottom: 2rem ;
+  }
+
+  h1, p {
+    text-align: center;
+    @media screen and (min-width: 1024px) {
+    text-align: left;
+    }
+  }
+
+  p {
+    margin-top: 3rem;
+    @media screen and (min-width: 1024px) {
+      margin-top: 1rem;
+    }
+  }
+
+  button {
+    @include btn-blue(2.3rem, 50%);
+    display: block;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    @media screen and (min-width: 1024px) {
+      margin: 3rem 0 0;
+      width: 50%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 40%;
+    }
+  }
+
+}

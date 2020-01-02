@@ -1,0 +1,58 @@
+@import "../../scss/mixins.scss";
+
+.my_links {
+
+  padding: 12rem 0 8rem;
+
+  .link {
+    border-radius: 1rem;
+    background-color: #fff;
+    padding: 2rem;
+
+    @media screen and (min-width: 1024px){
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+    }
+
+  }
+
+  p {
+    align-self: center;
+  }
+  
+  .converted {
+    padding: 1.5rem;
+    @media screen and (min-width: 1024px){
+      display: flex;
+      padding: 0;
+    }
+    p {
+      margin-bottom: 1rem;
+      color: hsl(180, 66%, 49%);
+      @media screen and (min-width: 1024px){
+        margin-bottom: 0;
+        margin-right: 3rem;
+      }
+    }
+  }
+
+  .original {
+    color: hsl(255, 11%, 22%);
+    padding: 1.5rem;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+    @media screen and (min-width: 1024px){
+      border-bottom: none;
+      padding: 0;
+    }
+  }
+
+  button {
+    @include btn-blue(0.5rem);
+    padding: 0.5rem;
+    @media screen and (min-width: 1024px){
+      padding: 1rem 2rem;   
+    }
+  }
+
+}

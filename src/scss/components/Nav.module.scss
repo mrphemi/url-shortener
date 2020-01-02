@@ -1,0 +1,139 @@
+@import "../../scss/mixins.scss";
+
+nav {
+  position: relative;
+  margin-top: 2rem;
+  z-index: 5;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    margin-top: 4rem;
+  }
+
+  ion-icon {
+    font-size: 3rem;
+    color:hsl(257, 7%, 63%);
+    align-self: center;
+    cursor: pointer;
+
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (min-width: 1024px) {
+      display: block;
+      flex-basis: 25%;
+    }
+  }
+
+  .links_list {
+    width: 90%;
+    position: absolute;
+    list-style-type: none; 
+    padding: 3rem 4rem;
+    margin-top: 2rem;
+    text-align: center;
+    background-color: hsl(257, 27%, 26%);
+    border-radius: 1.5rem;
+    opacity: 0;
+    transition:  height 0.3s ease-in-out, opacity 0.2s ease-in-out; 
+
+    @media screen and (min-width: 768px) {
+      width: 80%;
+    }
+
+
+    @media screen and (min-width: 1024px) {
+      position: static;
+      opacity: 1;
+      background: transparent;
+      margin-top: 0;
+      padding: 0;
+      flex-basis: 75%;
+      display: flex;
+    }
+
+    
+    .links_1, .links_2 {
+      @media screen and (min-width: 1024px) {
+        display: flex;
+      }
+    }
+
+
+    .links_1 {
+      margin-bottom: 6rem;
+      position: relative;
+      @media screen and (min-width: 1024px) {
+        margin-bottom: 0;
+      }
+      &::after {
+         content: "";
+        display: block;
+        width: 100%;
+        height: 0.1rem;
+        background-color: hsl(0, 0%, 75%);
+        position: absolute; 
+        left: 0;
+        margin-top: 3rem;
+        @media screen and (min-width: 1024px) {
+          display: none;
+        }
+      }
+    }
+
+    .links_2 {
+      @media screen and (min-width: 1024px) {
+        margin-left: auto;
+      }
+    }
+
+    // display nav on mobile
+    &.show {
+      opacity: 1;
+    }
+
+
+    li {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: capitalize;
+      margin-bottom: 2rem;
+      color: #fff;
+
+      @media screen and (min-width: 1024px) {
+        color:hsl(257, 7%, 63%);
+        margin-right: 2rem;
+        margin-bottom: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+        @media screen and (min-width: 1024px) {
+          margin-right: 0;
+        }
+      }
+
+      &.signup_link {
+        @include btn-blue(2.3rem);
+        color: #fff;
+        display: block;
+        @media screen and (min-width: 1024px) {
+          margin-top: -1rem;
+          padding: 1rem 2rem;   
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+    }
+
+  }
+}

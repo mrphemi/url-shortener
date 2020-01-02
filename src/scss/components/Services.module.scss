@@ -1,0 +1,136 @@
+.services {
+
+  h1, h2 {
+    margin-bottom: 2rem;
+  }
+
+  .intro {
+        
+    @media screen and (min-width: 1024px){
+      width: 80%;
+      margin: auto;
+    }
+    
+    @media screen and (min-width: 1200px){
+      width: 50%;
+    }
+
+  }
+
+  //  list of all services
+  .list {
+    padding: 7rem 0;
+
+    @media screen and (min-width: 1200px){
+        display: flex;    
+        padding: 7rem 0 20rem;
+    }
+
+    // Service box
+    .service {
+      background: #fff;
+      padding: 2rem 2rem 3rem;
+      border-radius: 1rem;
+      margin-bottom: 8rem;
+      position: relative;
+      z-index: 3;
+
+
+      @media screen and (min-width: 1024px){
+        width: 80%;
+        margin: 0 auto 8rem;
+      }
+
+      @media screen and (min-width: 1200px){
+       margin-bottom: 0;
+       margin-right: 4rem;
+       position: relative;
+       padding: 2rem 3rem 3rem;
+      }
+
+      //  2nd service box
+      &:nth-of-type(2) {
+        @media screen and (min-width: 1200px){
+          top: 4rem;
+          &::after {
+            top: 35% !important;
+          }
+        }
+      }
+
+      // last service box
+      &:last-of-type {
+        margin-bottom: 0;
+        @media screen and (min-width: 1200px){
+          top: 8rem;
+          margin-right: 0;
+        }
+      }
+
+      // Blue line after all but last service description box 
+      &:not(:last-child) {
+        &::after {
+           content: "";
+          display: block;
+          width: 0.8rem;
+          height: 6rem;
+          background-color: hsl(180, 66%, 49%);
+          position: absolute;
+          left: 50%;
+          top: 100%;
+          transform: translateX(-50%);
+          
+          @media screen and (min-width: 1200px){
+            display: flex;
+            top: 50%;
+            transform: translateY(-50%);
+            transform: translateX(0);
+            left: 100%;
+            width: 6rem;
+            height: 0.8rem;
+          }
+
+        }
+      }
+
+      // working illustration on header
+      .illustration {
+        position: relative;
+        margin: -6rem auto 2rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background-color: hsl(257, 27%, 26%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (min-width: 1200px){
+          margin: -6rem 0 2rem;
+        }
+      }
+
+      h2 {
+        @media screen and (min-width: 1200px){
+          text-align: left;
+        }
+      }
+
+      p {
+        
+        @media screen and (min-width: 1024px){
+          width: 80%;
+        }
+        
+        @media screen and (min-width: 1200px){
+          text-align: left;
+          width: 100%;
+        }
+    
+      }
+
+    }
+
+  }
+
+}

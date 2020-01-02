@@ -1,0 +1,43 @@
+footer {
+  padding:  5rem 0;
+  background-color: hsl(260, 8%, 14%);
+  .logo {
+    margin-bottom: 5rem;
+  }
+
+  h3 {
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+
+  .sub {
+    margin-bottom: 5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      color: hsl(257, 7%, 63%);
+      text-transform: capitalize;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      @media screen and (max-width: 360px){
+        font-size: 1.4rem;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+
+  .icon {
+    margin-right: 2rem;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

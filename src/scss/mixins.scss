@@ -1,0 +1,16 @@
+@mixin btn-blue($radius, $width:100%) {
+  width: $width;
+  border-radius: $radius;
+  padding: 1rem;
+  background-color: hsl(180, 66%, 49%);
+  text-transform: capitalize;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  @media screen and (max-width: 360px){
+    font-size: 1.6rem;
+  }
+ 
+}
