@@ -14,7 +14,9 @@ const Nav = () => {
   return (
     <nav className={classnames(styles.topnav, "container")}>
       <div className={styles.logo}>
-        <Logo />
+        <a href="/">
+          <Logo />
+        </a>
         <ion-icon name="menu" onClick={toggleNav} />
       </div>
       <ul
@@ -22,21 +24,21 @@ const Nav = () => {
       >
         <div className={styles.links_1}>
           <li>
-            <a href="#">features</a>
+            <a href="/">features</a>
           </li>
           <li>
-            <a href="#">pricing</a>
+            <a href="/">pricing</a>
           </li>
           <li>
-            <a href="#">resources</a>
+            <a href="/">resources</a>
           </li>
         </div>
         <div className={styles.links_2}>
           <li>
-            <a href="#">login</a>
+            <a href="/">login</a>
           </li>
           <li className={styles.signup_link}>
-            <a href="#">sign up</a>
+            <a href="/">sign up</a>
           </li>
         </div>
       </ul>

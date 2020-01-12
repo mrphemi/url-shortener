@@ -18,7 +18,7 @@ const Links = ({ links }) => {
 };
 
 Links.propTypes = {
-  links: PropTypes.array
+  links: PropTypes.array.isRequired
 };
 
 export default Links;
