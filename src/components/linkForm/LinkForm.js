@@ -7,6 +7,7 @@ import styles from "../../scss/components/LinkForm.module.scss";
 const LinkForm = ({ updateLinks }) => {
   const [link, setLink] = useState("");
   const [isValid, setIsValid] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // iniatialize empty array or get existing array of shortened links from localstorage
   const myShortenedLinks = localStorage.getItem("myShortenedLinks")
@@ -26,6 +27,8 @@ const LinkForm = ({ updateLinks }) => {
     try {
       // Validate user provided link against valid url regex pattern
       if (validateUrl) {
+        // set loading state to true
+        setLoading(true);
         // Send request to shorten url
         const shortened = await axios.post("https://rel.ink/api/links/", {
           url: `${link}`
@@ -41,14 +44,16 @@ const LinkForm = ({ updateLinks }) => {
         // update global links state
         updateLinks([...JSON.parse(localStorage.getItem("myShortenedLinks"))]);
 
-        // clear input field and set isValid to true
+        // clear input field, set isValid to true and set loading state to true
         setLink("");
         setIsValid(true);
+        setLoading(false);
       } else {
         // prompt user to provide valid url string
         setIsValid(false);
       }
     } catch (e) {
+      setLoading(false);
       console.log(e.message);
     }
   };
@@ -69,14 +74,14 @@ const LinkForm = ({ updateLinks }) => {
         {!isValid && (
           <p className={styles.error_msg}> please add a valid link </p>
         )}
-        <button>shorten it!</button>
+        <button>{loading ? "loading..." : "shorten it!"}</button>
       </form>
     </div>
   );
 };
 
 LinkForm.propTypes = {
-  updateLinks: PropTypes.func
+  updateLinks: PropTypes.func.isRequired
 };
 
 export default LinkForm;

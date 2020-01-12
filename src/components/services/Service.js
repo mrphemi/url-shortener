@@ -14,9 +14,9 @@ const Service = ({ title, description, IconComponent }) => (
 );
 
 Service.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  IconComponent: PropTypes.elementType
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  IconComponent: PropTypes.elementType.isRequired
 };
 
 export default Service;
