@@ -14,7 +14,7 @@ const LinkForm = ({ updateLinks }) => {
     ? [...JSON.parse(localStorage.getItem("myShortenedLinks"))]
     : [];
   // regex for valid url's
-  const urlPattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+  const urlPattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
 
   const onChange = (e) => {
     setLink(e.target.value);
