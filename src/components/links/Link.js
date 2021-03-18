@@ -7,7 +7,7 @@ import styles from "../../scss/components/Links.module.scss";
 const Link = ({ link }) => {
   const [copied, setCopied] = useState(false);
   // Copy shortened url to clipboard
-  const copyToClipboard = text => {
+  const copyToClipboard = (text) => {
     copy(text);
     setCopied(true);
     // Reversed copied state to false after 5seconds
@@ -17,13 +17,13 @@ const Link = ({ link }) => {
   };
   return (
     <div className={styles.link}>
-      <p className={styles.original}>{link.url}</p>
+      <p className={styles.original}>{link.original_link}</p>
       <div className={styles.converted}>
-        <p>{`https://rel.ink/${link.hashid}`}</p>
+        <p>{link.full_short_link}</p>
         <button
           className={copied ? styles.copied : ""}
           onClick={() => {
-            copyToClipboard(`https://rel.ink/${link.hashid}`);
+            copyToClipboard(link.full_short_link);
           }}
         >
           {copied ? "copied!" : "copy"}

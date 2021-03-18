@@ -16,13 +16,13 @@ const LinkForm = ({ updateLinks }) => {
   // regex for valid url's
   const urlPattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
-  const onChange = e => {
+  const onChange = (e) => {
     setLink(e.target.value);
   };
 
   const validateUrl = link !== "" && urlPattern.test(link);
 
-  const shortenUrl = async e => {
+  const shortenUrl = async (e) => {
     e.preventDefault();
     try {
       // Validate user provided link against valid url regex pattern
@@ -30,11 +30,12 @@ const LinkForm = ({ updateLinks }) => {
         // set loading state to true
         setLoading(true);
         // Send request to shorten url
-        const shortened = await axios.post("https://rel.ink/api/links/", {
-          url: `${link}`
-        });
+        const shortened = await axios.post(
+          `https://api.shrtco.de/v2/shorten?url=${link}`
+        );
+        const { full_short_link, original_link } = shortened.data.result;
         // push shortened url data to array
-        myShortenedLinks.push(shortened.data);
+        myShortenedLinks.push({ full_short_link, original_link });
         // store array in local storage
         localStorage.setItem(
           "myShortenedLinks",
